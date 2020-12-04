@@ -62,7 +62,6 @@ class MainActivity : AppCompatActivity() {
     fun alertToast(massege : String) {
         Toast.makeText(applicationContext, massege, Toast.LENGTH_SHORT).show()
     }
-
     fun getBranchesByIdBoss(id_boss : Int) {
         var getBranches = Thread(Runnable {
             dataObject.listBranch = (mRetrofitAPI.searchBranchByIdBoss(id_boss).execute().body() as ArrayList<Branch>?)!!
@@ -114,8 +113,6 @@ class MainActivity : AppCompatActivity() {
         }
         return success
     }
-
-
     fun modifyBranch(newBranch : Branch) : Boolean {
         var success = false
         var modifyBranch = Thread(Runnable {
@@ -125,7 +122,6 @@ class MainActivity : AppCompatActivity() {
         modifyBranch.join()
         return success
     }
-
     fun deleteBranch(target : Branch) : Boolean {
         var success = false
         var deleteBranch = Thread(Runnable {
@@ -135,7 +131,6 @@ class MainActivity : AppCompatActivity() {
         deleteBranch.join()
         return success
     }
-
     fun getWorkerViewesByIdBranch(id_branch : Int) {
         var list = ArrayList<WorkerView>()
         var getViews = Thread (Runnable {
@@ -155,7 +150,6 @@ class MainActivity : AppCompatActivity() {
         }
         dataObject.listWorkerView = list
     }
-
     fun createWorker(newWorkerInfo: WorkerInfo, id_branch: Int) : Boolean {
         var success = false
         var id = id_branch
@@ -185,7 +179,6 @@ class MainActivity : AppCompatActivity() {
         }
         return success
     }
-
     fun searchUserByAccount(account : String) : User {
         var result = User()
         var search = Thread(Runnable {
@@ -195,7 +188,6 @@ class MainActivity : AppCompatActivity() {
         search.join()
         return result
     }
-
     fun getAccountById(id_worker : Int) : String {
         var result = ""
         var thread = Thread(Runnable {
@@ -203,7 +195,6 @@ class MainActivity : AppCompatActivity() {
         })
         return result
     }
-
     fun getWorkerInfo(id_worker: Int, id_branch: Int) : WorkerInfo {
         var result = WorkerInfo()
         var thread = Thread(Runnable {
@@ -213,7 +204,6 @@ class MainActivity : AppCompatActivity() {
         thread.join()
         return result
     }
-
     fun modifyWorkerInfo(workerInfo: WorkerInfo) : Boolean {
         var result = false
         var thread = Thread(Runnable {
@@ -228,7 +218,6 @@ class MainActivity : AppCompatActivity() {
         }
         return result
     }
-
     fun deleteWorkerInfo(id_worker: Int, id_branch: Int) : Boolean {
         var result = false
         var thread = Thread(Runnable {
@@ -238,7 +227,6 @@ class MainActivity : AppCompatActivity() {
         thread.join()
         return result
     }
-
     fun createWork(workerInfo : WorkerInfo, dates : List<CalendarDay>) : Boolean {
         var result = false
         for (date in dates) {
@@ -258,7 +246,6 @@ class MainActivity : AppCompatActivity() {
         }
         return result
     }
-
     fun deleteWorkByIdWorkInfo(id_workerInfo : Int) : Boolean {
         var result = false
         var thread = Thread (Runnable {
@@ -268,7 +255,6 @@ class MainActivity : AppCompatActivity() {
         thread.join()
         return result
     }
-
     fun getWorksByIdWorkerInfo(id_workerInfo: Int) : HashMap<CalendarDay, Work> {
         var result = LinkedHashMap<CalendarDay, Work>()
         var temp = listOf<Work>()
@@ -284,7 +270,6 @@ class MainActivity : AppCompatActivity() {
         }
         return result
     }
-
     fun modifyWork(work : Work) : Boolean {
         var result = false
         var thread = Thread(Runnable {
@@ -294,7 +279,6 @@ class MainActivity : AppCompatActivity() {
         thread.join()
         return result
     }
-
     // Have to be used when listWorkerview is existed
     fun getWorkersByIdBranch(id_branch: Int) : ArrayList<Worker> {
         var list = listOf<WorkerInfo>()
@@ -320,7 +304,6 @@ class MainActivity : AppCompatActivity() {
         }
         return list2
     }
-
     fun createWorkerDetail(item : WorkerDetail) {
         var thread = Thread(Runnable {
             mRetrofitAPI.createWorkerDetail(item).execute().body()!!
@@ -344,7 +327,6 @@ class MainActivity : AppCompatActivity() {
         thread.join()
         return detail
     }
-
     // After Setting selectBranch
     fun getWorkersAndDetails() {
         getWorkerViewesByIdBranch(dataObject.selectBranch.id)
@@ -354,7 +336,6 @@ class MainActivity : AppCompatActivity() {
             dataObject.listWorker[i].infowork = getWorksByIdWorkerInfo(dataObject.listWorker[i].id_workerInfo)
         }
     }
-
     fun getWorkerInfoByIdWorker(id_worker: Int) : ArrayList<WorkerInfo> {
         var result = ArrayList<WorkerInfo>()
         var thread = Thread(Runnable {
@@ -364,7 +345,6 @@ class MainActivity : AppCompatActivity() {
         thread.join()
         return result
     }
-
     fun getBranchByIdBranch(id_branch : Int) : Branch {
         var result = Branch()
         var thread = Thread(Runnable {
@@ -374,7 +354,6 @@ class MainActivity : AppCompatActivity() {
         thread.join()
         return result
     }
-
     fun getBranches(position : Int) {
         dataObject.selectBranch = dataObject.listBranch[position]
         dataObject.selectWorkerInfo = dataObject.listWorkerInfo[position]
