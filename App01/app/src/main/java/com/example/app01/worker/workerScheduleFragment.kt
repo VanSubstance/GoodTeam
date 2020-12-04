@@ -134,8 +134,6 @@ class workerScheduleFragment : Fragment() {
         binding.wageFull = resultTotal[2].toString() + "원"
         binding.wageTotal = (resultTotal[0] + resultTotal[2] + resultTotal[1]).toString() + "원"
         binding.wage = item.payment.toString()
-        binding.attendence = worker.datesWork.size.toString()
-        binding.absence = "0"
         paintCalander((activity as MainActivity), worker.infowork)
         paintCalanderSchedule(worker.datesWork)
     }
