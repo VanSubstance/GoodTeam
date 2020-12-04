@@ -69,7 +69,7 @@
 
         <Button
             android:id="@+id/buttonSignup"
-            android:text="회원가입"
+            android:text="S I G N U P"
             style="@style/buttonLogin"
             android:layout_marginBottom="50dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -78,7 +78,7 @@
 
         <Button
             android:id="@+id/buttonLogin"
-            android:text="로그인"
+            android:text="L O G I N"
             style="@style/buttonLogin"
             android:layout_marginBottom="25dp"
             app:layout_constraintBottom_toTopOf="@id/buttonSignup"
