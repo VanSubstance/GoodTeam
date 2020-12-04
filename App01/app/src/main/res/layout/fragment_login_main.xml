@@ -30,6 +30,17 @@
             app:layout_constraintRight_toRightOf="parent"
             />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="A   D   D   O   N"
+            style="@style/textLogo"
+            android:layout_margin="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
         <EditText
             android:id="@+id/editId"
             style="@style/buttonLogin"

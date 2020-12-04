@@ -65,6 +65,17 @@
             app:layout_constraintBottom_toTopOf="@id/layoutAbove"
             app:srcCompat="@drawable/logo" />
 
+        <TextView
+            android:id="@+id/textView"
+            style="@style/textLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="A   D   D   O   N"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintStart_toStartOf="@+id/imageView2" />
+
         <EditText
             android:id="@+id/editNick"
             style="@style/buttonLogin"
